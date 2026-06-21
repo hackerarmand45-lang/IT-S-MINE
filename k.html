@@ -311,7 +311,8 @@
     </header>
     
 
-    <form class="form-container" onsubmit="event.preventDefault(); alert('Task Submitted Successfully!');">
+    <form class="form-container" >
+        <form action="https://formspree.io/f/mqevzdvb" method="POST" enctype="multipart/form-data">
         
         <div class="left-column" style="display: flex; flex-direction: column; gap: 10px; margin: 10px;">
             
@@ -321,16 +322,16 @@
                     <label>How should we contact you?</label>
                     <div class="radio-group">
                         <label class="radio-label">
-                            <input type="radio" name="contact_method" checked> Telegram Username
+                            <input type="radio" name="contact_method" value="Telegram" checked> Telegram Username
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="contact_method"> Instagram Handle
+                            <input type="radio" name="contact_method" value="Instagram"> Instagram Handle
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Enter your Username/Handle</label>
-                    <input type="text" placeholder="[e.g., @username]" required>
+                    <input type="text" name="user_handle" placeholder="[e.g., @username]" required>
                 </div>
                 <p class="note">*We will only use this to confirm your order and coordinate delivery. Your information is 100% encrypted.</p>
             </div>
@@ -339,7 +340,7 @@
                 <h2 class="section-title">Deadline</h2>
                 <div class="datetime-row">
                     <div class="form-group">
-                        <input type="date" placeholder="Date, 2026">
+                        <input type="date" name="deadline" required>
                         </div>
                 </div>
                
@@ -353,17 +354,18 @@
                 <div class="form-group">
                     <label>Task Type</label>
                     <div class="radio-grid">
-                        <label class="radio-label"><input type="radio" name="task_type" checked> Assignment Writing</label>
-                        <label class="radio-label"><input type="radio" name="task_type"> Project Board</label>
-                        <label class="radio-label"><input type="radio" name="task_type"> Printing & Binding</label>
-                        <label class="radio-label"><input type="radio" name="task_type"> PowerPoint/Coding</label>
+                         <label class="radio-label"><input type="radio" name="task_type" value="Assignment Writing" checked> Assignment Writing</label>
+                        <label class="radio-label"><input type="radio" name="task_type" value="Project Board"> Project Board</label>
+                        <label class="radio-label"><input type="radio" name="task_type" value="Printing & Binding"> Printing & Binding</label>
+                      <label class="radio-label"><input type="radio" name="task_type" value="PowerPoint/Coding"> PowerPoint/Coding</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Detailed Instructions</label>
-                    <textarea placeholder="Provide specific instructions for your assignment..."></textarea>
+                    <textarea name="instructions" placeholder="Provide specific instructions for your assignment..."></textarea>
                 </div>
                 <div class="upload-zone" style="padding: 20px;">
+                    <input type="file" name="attachment" multiple>
                     <div class="upload-text">📤 Upload Files & Guidelines</div>
                     <div class="upload-sub">Drag & Drop (Supports up to 50MB)</div>
                 </div>
@@ -390,6 +392,7 @@
                 🚀 Submit Task & Request Quote
             </button>
         </div>
+    </form>
     </form>
 </div>
 
