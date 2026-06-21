@@ -312,17 +312,17 @@
 
  
 
-    <form action="https://formspree.io/f/mqevzdvb" method="POST" class="form-container" onsubmit="event.preventDefault();">
-
-        <div class="left-column" style="display: flex; flex-direction: column; gap: 10px; margin: 10px;">
+    <form class="form-container" onsubmit="event.preventDefault();">
+        <form  action="https://formspree.io/f/mqevzdvb" method="POST">
+            <div class="left-column" style="display: flex; flex-direction: column; gap: 10px; margin: 10px;">
             
-            <div for="email" name="message" class="form-section">
+            <div class="form-section" >
                 <h2 class="section-title">Anonymous Contact Info <span>(TOTAL PRIVACY)</span></h2>
                 <div class="form-group">
                     <label>How should we contact you?</label>
                     <div class="radio-group">
                         <label class="radio-label">
-                            <input  type="radio" name="contact_method" checked> Telegram Username
+                            <input  for="email" name="email" type="radio" name="contact_method" required checked> Telegram Username
                         </label>
                         <label class="radio-label">
                             <input type="radio" name="contact_method"> Instagram Handle
@@ -331,7 +331,7 @@
                 </div>
                 <div class="form-group">
                     <label>Enter your Username/Handle</label>
-                    <input type="text" placeholder="[e.g., @username]" required>
+                    <input for="email" name="email" type="text" placeholder="[e.g., @username]" required>
                 </div>
                 <p class="note">*We will only use this to confirm your order and coordinate delivery. Your information is 100% encrypted.</p>
             </div>
@@ -340,7 +340,7 @@
                 <h2 class="section-title">Deadline</h2>
                 <div class="datetime-row">
                     <div class="form-group">
-                        <input type="date" placeholder="Date, 2026">
+                        <input for="message" name="message" type="date" placeholder="Date, 2026" required>
                         </div>
                 </div>
                
